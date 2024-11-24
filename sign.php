@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <key>kind</key>
                     <string>software-package</string>
                     <key>url</key>
-                    <string>https://YOURWEBSITE/{$signedIpa}</string>
+                    <string>https://velora-nu.vercel.app/{$signedIpa}</string>
                 </dict>
             </array>
             <key>metadata</key>
@@ -54,7 +54,7 @@ PLIST;
     file_put_contents($plistPath, $plist);
 
     // Send installation link via plist
-    $installLink = "itms-services://?action=download-manifest&url=https://YOURWEBSITE/{$plistPath}"; // Change the link to your website
+    $installLink = "itms-services://?action=download-manifest&url=https://velora-nu.vercel.app/{$plistPath}"; // Change the link to your website
     echo "The signed .ipa is available at: <a href=\"$installLink\">installation link</a><br>";
 
     // Save the installation link on the server
